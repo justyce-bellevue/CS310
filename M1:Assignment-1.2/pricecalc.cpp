@@ -21,12 +21,11 @@ int main()
     double markupAmount = (markupPercentage / 100) * originalPrice;
     double sellingPrice = markupAmount + originalPrice;
 
-    // Caluclate sales tax and final sale price
+    // Calculate sales tax and final sale price
     double salesTax = (salesTaxRate / 100) * sellingPrice;
     double finalPrice = sellingPrice + salesTax;
 
     // Display results
-
     cout << "\nOriginal Price: $" << originalPrice << endl;
     cout << "Markup Percentage: " << markupPercentage << "%" << endl;
     cout << "Selling Price: $" << sellingPrice << endl;

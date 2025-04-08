@@ -1,6 +1,5 @@
 #include <iostream>
 
-using namespace std;
 
 int main() {
 
@@ -8,14 +7,14 @@ int main() {
     int additionalTimePerDish;
     int totalPrepareTime;
 
-    cout << "How many minutes does it take to cook the first dish? ";
-    cin >> firstDishTime;
+    std::cout << "How many minutes does it take to cook the first dish? ";
+    std::cin >> firstDishTime;
 
-    cout << "How many additional minutes will it take to cook the next dish? ";
-    cin >> additionalTimePerDish;
+    std::cout << "How many additional minutes will it take to cook the next dish? ";
+    std::cin >> additionalTimePerDish;
 
-    cout << "How long, in minutes, do you have to prepare the dishes? ";
-    cin >> totalPrepareTime;
+    std::cout << "How long, in minutes, do you have to prepare the dishes? ";
+    std::cin >> totalPrepareTime;
 
     int currentCookTime = 0;
     int dishesCooked = 0;
@@ -30,7 +29,7 @@ int main() {
             break;
         }
     }
-    cout << "You can cook " << dishesCooked << " dishes in " << totalPrepareTime << " minutes." << endl;
+    std::cout << "You can cook " << dishesCooked << " dishes in " << totalPrepareTime << " minutes." << endl;
 
     return 0;
 }

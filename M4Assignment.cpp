@@ -1,29 +1,36 @@
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    int firstDish, additionalTime, totalTime;
 
-    cout << "Enter the time, in minutes, to prepare the first dish: ";
-    cin >> firstDish;
-    cout << "Enter the additional time each dish will take to make: ";
-    cin >> additionalTime;
-    cout << "Enter the total time available for cooking: ";
-    cin >> totalTime;
+    int firstDishTime;
+    int additionalTimePerDish;
+    int totalPrepareTime;
 
-    int dishes = 0;
-    int timeSpent = 0;
+    cout << "How many minutes does it take to cook the first dish? ";
+    cin >> firstDishTime;
 
-    while (true) {
-        int dishTime = firstDish + additionalTime * dishes;
-        if (timeSpent + dishTime > totalTime) {
+    cout << "How many additional minutes will it take to cook the next dish? ";
+    cin >> additionalTimePerDish;
+
+    cout << "How long, in minutes, do you have to prepare the dishes? ";
+    cin >> totalPrepareTime;
+
+    int currentCookTime = 0;
+    int dishesCooked = 0;
+    while (currentCookTime < totalPrepareTime){
+        if (dishesCooked == 0) {
+            currentCookTime = firstDishTime;
+            dishesCooked += 1;
+        } else if (currentCookTime + additionalTimePerDish * dishesCooked < totalPrepareTime){
+            currentCookTime += additionalTimePerDish * dishesCooked;
+            dishesCooked += 1;
+        } else {
             break;
         }
-        timeSpent += dishTime;
-        dishes++;
     }
-
-    cout << "Bianca can prepare " << dishes << " dishes." << endl;
+    cout << "You can cook " << dishesCooked << " in " << totalPrepareTime << " minutes." << endl;
 
     return 0;
 }

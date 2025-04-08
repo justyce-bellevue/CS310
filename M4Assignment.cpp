@@ -30,7 +30,7 @@ int main() {
             break;
         }
     }
-    cout << "You can cook " << dishesCooked << " in " << totalPrepareTime << " minutes." << endl;
+    cout << "You can cook " << dishesCooked << " dishes in " << totalPrepareTime << " minutes." << endl;
 
     return 0;
 }

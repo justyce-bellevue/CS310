@@ -1,0 +1,10 @@
+#include <iostream>
+
+void loki() {
+	std::cout << "Loki is my dog and he is a huskey!";
+}
+int main()
+{
+	loki();
+	return 0;
+}
